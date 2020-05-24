@@ -1,0 +1,38 @@
+server:
+    port: ${SERVER_PORT:8080}
+
+# Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+spring:
+    datasource:
+        url: ${DB_URL:jdbc:postgresql://localhost:5432/register_hours}
+        username: ${DB_USERNAME:postgres}
+        password: ${DB_PASSWORD:postgres}
+        driverClassName: ${DB_DRIVERCLASSNAME:org.postgresql.Driver}
+
+    # The SQL dialect makes Hibernate generate better SQL for the chosen database
+    jpa:
+        properties:
+            hibernate:
+                dialect: ${DB_DIALECT:org.hibernate.dialect.PostgreSQLDialect}
+
+    # Hibernate ddl auto (create, create-drop, validate, update)
+        hibernate:
+            ddl-auto: update
+
+# springdoc configuration
+springdoc:
+    api-docs:
+        path: ${PATH_API_DOCS:/api-docs}
+    swagger-ui:
+        path: ${PATH_SWAGGER:/swagger.html}
+
+# Vars from program
+register-hours:
+    max-hours-day: ${MAX_HOURS_DAU:36000000}
+    min-monday: ${MIN_START_MONDAY:28800000}
+    min-tuesday: ${MIN_START_TUESDAY:28800000}
+    min-wednesday: ${MIN_START_WEDNESDAY:28800000}
+    min-thursday: ${MIN_START_THURSDAY:28800000}
+    min-friday: ${MIN_START_FRIDAY:25200000}
+    min-saturday: ${MIN_START_SATURDAY:28800000}
+    min-sunday: ${MIN_START_SUNDAY:28800000}

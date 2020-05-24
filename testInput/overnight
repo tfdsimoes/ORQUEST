@@ -1,0 +1,19 @@
+[
+   {
+      "businessId":"1",
+      "date":"2018-01-03T22:00:00.000Z",
+      "employeeId":"02_000064",
+      "recordType":"IN",
+      "serviceId":"ATALAYAS",
+      "type":"WORK"
+   },
+   {
+      "businessId":"1",
+      "date":"2018-01-04T02:00:00.000Z",
+      "employeeId":"02_000064",
+      "recordType":"OUT",
+      "serviceId":"ATALAYAS",
+      "type":"WORK"
+   }
+]
+

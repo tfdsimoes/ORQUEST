@@ -1,0 +1,42 @@
+version: "3"
+
+networks:
+  public-network:
+
+  private-network:
+    internal: true
+
+services:
+  database:
+    image: postgres:12.3
+    networks:
+      - private-network
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: register_hours
+
+  backend:
+    image: orquest/register-hours:0.0.1-SNAPSHOT
+    networks:
+      - private-network
+      - public-network
+    depends_on:
+      - database
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    environment:
+        DB_URL: jdbc:postgresql://database:5432/register_hours
+
+  frontend:
+    image: orquest/frontend:0.0.1-SNAPSHOT
+    networks:
+      - private-network
+      - public-network
+    depends_on:
+      - backend
+    ports:
+      - "8081:80"
+    expose:
+      - "8081"

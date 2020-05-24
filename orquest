@@ -1,0 +1,48 @@
+Model Data
+    - check document
+
+REST Services:
+    - add new entries in the system (json)
+    - get hours work during the week
+    - get register of day
+    - update\patch registers
+    - delete registers
+
+alarm types
+    - register day incomplete
+    - max 10 work hour day (take out rest period)
+    - monday to thursday minimal enter 8:00
+    - friday minimal enter 7:00
+    - (more can be added in the future)
+
+interface
+    - "login screen" (just insert employeeId)
+        - check alerts
+        - check hours worked in week
+        - check hours in day
+
+notes
+    - rest time substract in working hours
+    - registers incompletes 
+    - registers wrongs
+    - check special cases
+        - working overnight
+        - working in days of changing hours
+
+-----------------
+
+employees   -> register_works
+            -> alerts
+
+-----------------
+
+database - postgres
+backend - java
+frontend - angular
+--
+swagger
+postman
+--
+tests
+    - unit
+    - integration

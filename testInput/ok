@@ -1,0 +1,34 @@
+[
+   {
+      "businessId":"1",
+      "date":"2018-01-01T08:00:00.000Z",
+      "employeeId":"02_000064",
+      "recordType":"IN",
+      "serviceId":"ATALAYAS",
+      "type":"WORK"
+   },
+   {
+      "businessId":"1",
+      "date":"2018-01-01T13:30:00.000Z",
+      "employeeId":"02_000064",
+      "recordType":"OUT",
+      "serviceId":"ATALAYAS",
+      "type":"WORK"
+   },
+   {
+      "businessId":"1",
+      "date":"2018-01-01T10:30:00.000Z",
+      "employeeId":"02_000064",
+      "recordType":"IN",
+      "serviceId":"ATALAYAS",
+      "type":"REST"
+   },
+   {
+      "businessId":"1",
+      "date":"2018-01-01T10:45:00.000Z",
+      "employeeId":"02_000064",
+      "recordType":"OUT",
+      "serviceId":"ATALAYAS",
+      "type":"REST"
+   }
+]

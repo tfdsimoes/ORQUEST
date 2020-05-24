@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "c5aeaf7d-ed59-45fd-a73b-7cefb9a2a7c6",
+		"name": "Register Hours",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Registers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n   {\n      \"businessId\":\"1\",\n      \"date\":\"2018-01-01T08:00:00.000Z\",\n      \"employeeId\":\"02_000064\",\n      \"recordType\":\"IN\",\n      \"serviceId\":\"ATALAYAS\",\n      \"type\":\"WORK\"\n   },\n   {\n      \"businessId\":\"1\",\n      \"date\":\"2018-01-01T13:30:00.000Z\",\n      \"employeeId\":\"02_000064\",\n      \"recordType\":\"OUT\",\n      \"serviceId\":\"ATALAYAS\",\n      \"type\":\"WORK\"\n   },\n   {\n      \"businessId\":\"1\",\n      \"date\":\"2018-01-01T10:30:00.000Z\",\n      \"employeeId\":\"02_000064\",\n      \"recordType\":\"IN\",\n      \"serviceId\":\"ATALAYAS\",\n      \"type\":\"REST\"\n   },\n   {\n      \"businessId\":\"1\",\n      \"date\":\"2018-01-01T10:45:00.000Z\",\n      \"employeeId\":\"02_000064\",\n      \"recordType\":\"OUT\",\n      \"serviceId\":\"ATALAYAS\",\n      \"type\":\"REST\"\n   }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get employee register by day",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/employee/402881a7723e770b01723e7776ac0000/register/day/2018-01-02",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"402881a7723e770b01723e7776ac0000",
+						"register",
+						"day",
+						"2018-01-02"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get employee register by week",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/employee/402881a7723e770b01723e7776ac0000/register/year/2018/week/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"402881a7723e770b01723e7776ac0000",
+						"register",
+						"year",
+						"2018",
+						"week",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get alerts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/employee/402881a7723e770b01723e7776ac0000/alerts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"402881a7723e770b01723e7776ac0000",
+						"alerts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"number\":\"02_000064\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/employee/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Register",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\":\"2018-01-05T08:00:00.000Z\",\n    \"recordType\":\"IN\",\n    \"type\":\"WORK\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/register/402881a7724211a301724211ccd40001",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register",
+						"402881a7724211a301724211ccd40001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete register",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/register/402881a77242547701724254ae800001",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register",
+						"402881a77242547701724254ae800001"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

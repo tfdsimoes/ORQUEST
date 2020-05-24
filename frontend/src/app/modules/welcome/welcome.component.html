@@ -1,0 +1,80 @@
+<h2>Welcome</h2>
+
+<table>
+  <tr>
+    <td>
+      <button (click)="loadAlerts()">Get Alerts</button>
+    </td>
+    <td>
+      Day: <input type="date" [(ngModel)]="day">
+      <button (click)="loadDayRegisters()">Get Registers</button>
+    </td>
+    <td>
+      Year: <input type="number" [(ngModel)]="year">
+      Weak: <input type="number" [(ngModel)]="week">
+      <button (click)="loadWeekRegisters()">Get Registers</button>
+    </td>
+  </tr>
+</table>
+
+<table *ngIf="alerts !== null" border="1">
+  <tr>
+    <th>Date</th>
+    <th>Type</th>
+    <th>Note</th>
+  </tr>
+
+  <tr *ngFor="let alert of alerts">
+    <td>{{alert.date}}</td>
+    <td>{{alert.type}}</td>
+    <td>{{alert.notes}}</td>
+  </tr>
+</table>
+
+<div *ngIf="dayRegisters !== null">
+  <p>Day {{dayRegisters.date}}</p>
+  <p>Total worked time worked {{getFormatHours(dayRegisters.totalWork)}}</p>
+
+  <table  border="1">
+    <tr>
+      <th>Id</th>
+      <th>Date</th>
+      <th>Record Type</th>
+      <th>Type</th>
+    </tr>
+
+    <tr *ngFor="let register of dayRegisters.registers">
+      <td>{{register.id}}</td>
+      <td>{{register.date | date: 'short'}}</td>
+      <td>{{register.recordType}}</td>
+      <td>{{register.type}}</td>
+    </tr>
+  </table>
+</div>
+
+<div *ngIf="weekRegisters !== null">
+  <p>Total worked time worked in the week {{getFormatHours(weekRegisters.totalWork)}}</p>
+
+  <div *ngFor="let dayOfWeekRegister of weekRegisters.registersDay">
+    <p>Day {{dayOfWeekRegister.date}}</p>
+    <p>Total worked time worked {{getFormatHours(dayOfWeekRegister.totalWork)}}</p>
+
+    <table  border="1">
+      <tr>
+        <th>Id</th>
+        <th>Date</th>
+        <th>Record Type</th>
+        <th>Type</th>
+      </tr>
+
+      <tr *ngFor="let register of dayOfWeekRegister.registers">
+        <td>{{register.id}}</td>
+        <td>{{register.date | date: 'short'}}</td>
+        <td>{{register.recordType}}</td>
+        <td>{{register.type}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
