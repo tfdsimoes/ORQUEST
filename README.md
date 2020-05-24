@@ -7,7 +7,7 @@ This is a solution for the challenge of ORQUEST.
 These project is build with JAVA8 for backend and Angular for frontend.
 
 ### General
-The project run with (docker)[https://docs.docker.com/get-docker/] and (docker-compose)[https://docs.docker.com/compose/install/] and need to be installed.
+The project run with [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) and need to be installed.
 
 ### Backend
 
@@ -46,7 +46,7 @@ All have predefined values to run.
 Most of the code have javadoc in the methods and classes.
 
 #### Endpoints
-Documentation can be find when lunching the project in [yml](http://localhost:8080/api-docs.yaml) and with [swagger](http://localhost:8080/swagger.html) there is missing information. 
+Documentation can be find when lunching the project in [yml](http://localhost:8080/api-docs.yaml) and with [swagger](http://localhost:8080/swagger-ui/index.htm) there is missing information. 
 
 There is also a collection of [Postman](https://www.getpostman.com/) in the root of the project.
 
